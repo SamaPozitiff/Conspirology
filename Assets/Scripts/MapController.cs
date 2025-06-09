@@ -99,4 +99,10 @@ public class MapController : MonoBehaviour
         currentPlaces.Clear();
 
     }
+
+    public void EnterRoomOnClick()
+    {
+        GameManager.dayCount++;
+        SceneManager.LoadScene("Room");
+    }
 }
