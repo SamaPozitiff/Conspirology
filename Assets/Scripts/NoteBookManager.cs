@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class NoteBookManager : MonoBehaviour
@@ -29,4 +24,6 @@ public class NoteBookManager : MonoBehaviour
         point.GetComponent<NoteUIController>().SetupText(note);
         return point;
     }
+    
+    
 }

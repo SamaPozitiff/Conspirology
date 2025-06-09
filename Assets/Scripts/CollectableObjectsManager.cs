@@ -8,6 +8,7 @@ public class CollectableObjectsManager : MonoBehaviour
 {
     [SerializeField] private List<CollectableObject> collectableObjects = new List<CollectableObject>();
     [SerializeField] private GameObject prefab;
+    [SerializeField] private AudioSource audioSource;
 
 
     private void Start()
@@ -23,7 +24,7 @@ public class CollectableObjectsManager : MonoBehaviour
             image.sprite = collectableObjects[i].GetImage();
             image.SetNativeSize();
             button.onClick.AddListener(() => AddNote(buttonObject));
-            
+            button.onClick.AddListener(() => GameManager.PlayButtonSound(audioSource));
         }
     }
     
