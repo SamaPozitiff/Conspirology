@@ -7,6 +7,7 @@ public class SceneNavigator : MonoBehaviour
 {
     public void LoadRoomScene()
     {
+        
         SceneManager.LoadScene("Room");
     }
     
