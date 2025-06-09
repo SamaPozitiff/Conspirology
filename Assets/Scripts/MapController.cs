@@ -57,12 +57,14 @@ public class MapController : MonoBehaviour
             nameText.text = currentlySelectedPoint.nameField;
             levelText.text = currentlySelectedPoint.levelField;
             enterButton.interactable = true;
+            GameManager.levelName = nameText.text;
         }
         else
         {
             nameText.text = "";
             levelText.text = "";
             enterButton.interactable = false;
+            GameManager.levelName = "";
         }
 
         dayCountText.text = GameManager.dayCount.ToString();
