@@ -6,29 +6,26 @@ using UnityEngine.UI;
 public class MapController : MonoBehaviour
 {
     [SerializeField] private Text dayCountText;
-    private List<PointController> currentPlaces = new();
     [SerializeField] PointController placesPrefab;
     [SerializeField] Button enterButton;
     [SerializeField] Text nameText;
     [SerializeField] Text levelText;
-    private PointController currentlySelectedPoint;
     [SerializeField] private AudioSource audioSource;
+    private List<PointController> currentPlaces = new();
+    private PointController currentlySelectedPoint;
 
     void Start()
     {
-        SetSoundsToAllButtons();
         GeneratePlaces();
     }
 
 
     public void SelectPoint(PointController point)
     {
-
         if (currentlySelectedPoint == point)
         {
             return;
         }
-
         currentlySelectedPoint = point;
         UpdateText();
     }
@@ -38,16 +35,6 @@ public class MapController : MonoBehaviour
         GameManager.dayCount++;
         GeneratePlaces();
         UpdateText();
-    }
-
-    private void SetSoundsToAllButtons()
-    {
-        Button[] buttons = FindObjectsOfType<Button>();
-        foreach (Button button in buttons)
-        {
-            button.onClick.AddListener(() => GameManager.PlayButtonSound(audioSource));
-        }
-
     }
 
     private void UpdateText()
@@ -66,7 +53,6 @@ public class MapController : MonoBehaviour
             enterButton.interactable = false;
             GameManager.levelName = "";
         }
-
         dayCountText.text = GameManager.dayCount.ToString();
     }
 
@@ -79,9 +65,7 @@ public class MapController : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             float width = Random.Range(-4, 5) * 100f;
-
             float height = Random.Range(-3, 4) * 50f;
-
             Vector3 randomPosition = new Vector3(width, height, 0);
             GameObject pointGO = Instantiate(placesPrefab.gameObject, gameObject.transform, false);
 
@@ -96,9 +80,7 @@ public class MapController : MonoBehaviour
                     Names.GetRandomName());
                 pointGO.GetComponent<Button>().onClick.AddListener(() => GameManager.PlayButtonSound(audioSource));
             }
-
         }
-
         SelectPoint(null);
         UpdateText();
     }

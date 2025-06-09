@@ -33,7 +33,6 @@ public class RoomController : MonoBehaviour
         timerText.text = FormatTime(currrentTimer);
     }
 
-
     private string FormatTime(float time)
     {
         int minutes = (int)(time / 60);

@@ -795,6 +795,7 @@ GameObject:
   - component: {fileID: 933844932}
   - component: {fileID: 933844934}
   - component: {fileID: 933844933}
+  - component: {fileID: 933844935}
   m_Layer: 5
   m_Name: ButtonPanel
   m_TagString: Untagged
@@ -867,6 +868,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 933844931}
   m_CullTransparentMesh: 1
+--- !u!114 &933844935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 933844931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b22d2cc3194784da44e1f3032e88d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1515637462}
 --- !u!1 &1351951458
 GameObject:
   m_ObjectHideFlags: 0
